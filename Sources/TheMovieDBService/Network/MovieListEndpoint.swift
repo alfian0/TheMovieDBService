@@ -13,7 +13,7 @@ public enum MovieListEndpoint: String {
   case topRated = "top_rated"
   case popular
 
-  var description: String {
+  public var description: String {
     switch self {
     case .nowPlaying: return "Now Playing".localized()
     case .upcoming: return "Upcoming".localized()
