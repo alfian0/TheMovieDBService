@@ -18,7 +18,7 @@ public protocol MovieService {
 public class MovieServiceImpl: MovieService {
   private let client: HTTPClient
 
-  init(client: HTTPClient) {
+  public init(client: HTTPClient) {
     self.client = client
   }
 
