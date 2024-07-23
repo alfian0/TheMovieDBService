@@ -28,7 +28,12 @@ let package = Package(
             dependencies: [
               "TheMovieDBCore",
               "Alamofire"
-            ]),
+            ],
+            resources: [
+              .process("Resources/MovieContainer.xcdatamodeld"),
+              .process("Resources/Localizable.strings")
+            ]
+        ),
         .testTarget(
             name: "TheMovieDBServiceTests",
             dependencies: ["TheMovieDBService"]),
