@@ -23,7 +23,7 @@ public class MovieRepositoryImpl: MovieRepository {
   private var movieService: MovieService
   private var favoriteService: FavoriteService
 
-  init(movieService: MovieService, favoriteService: FavoriteService) {
+  public init(movieService: MovieService, favoriteService: FavoriteService) {
     self.movieService = movieService
     self.favoriteService = favoriteService
   }
