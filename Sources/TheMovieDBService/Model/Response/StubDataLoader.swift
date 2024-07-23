@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 public class StubDataLoader {
   public static func loadStubMovies() -> [MovieDTO] {
@@ -24,6 +25,17 @@ public class StubDataLoader {
       return response
     } catch {
       print("Failed to load and decode JSON: \(error.localizedDescription)")
+      return nil
+    }
+  }
+}
+
+public class ContainerLoader {
+  public static func loadStubMovies() -> NSPersistentContainer? {
+    do {
+      return try Bundle.main.loadNSPersistentContainer(filename: "MovieContainer")
+    } catch {
+      print("Failed to load container: \(error.localizedDescription)")
       return nil
     }
   }
