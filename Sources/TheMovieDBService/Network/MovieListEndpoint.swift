@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import TheMovieDBCore
 
 public enum MovieListEndpoint: String {
   case nowPlaying = "now_playing"

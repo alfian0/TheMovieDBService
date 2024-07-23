@@ -30,7 +30,3 @@ public class StubDataLoader {
     }
   }
 }
-
-public extension Bundle {
-  static var theMovieDBService: Bundle = .module
-}
