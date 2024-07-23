@@ -18,7 +18,7 @@ public protocol FavoriteService {
 public final class FavoriteServiceImp: FavoriteService {
   private let client: CoreDataClient
 
-  init(with client: CoreDataClient) {
+  public init(with client: CoreDataClient) {
     self.client = client
   }
 
