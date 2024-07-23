@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import TheMovieDBCore
 
 public class StubDataLoader {
   public static func loadStubMovies() -> [MovieDTO] {
@@ -31,7 +32,7 @@ public class StubDataLoader {
 }
 
 public class ContainerLoader {
-  public static func loadStubMovies() -> NSPersistentContainer? {
+  public static func loadContainer() -> NSPersistentContainer? {
     do {
       return try Bundle.main.loadNSPersistentContainer(filename: "MovieContainer")
     } catch {
