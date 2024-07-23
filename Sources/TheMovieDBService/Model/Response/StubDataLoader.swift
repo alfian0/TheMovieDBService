@@ -31,13 +31,6 @@ public class StubDataLoader {
   }
 }
 
-public class ContainerLoader {
-  public static func loadContainer() -> NSPersistentContainer? {
-    do {
-      return try Bundle.main.loadNSPersistentContainer(filename: "MovieContainer")
-    } catch {
-      print("Failed to load container: \(error.localizedDescription)")
-      return nil
-    }
-  }
+public extension Bundle {
+  static var theMovieDBService: Bundle = .module
 }
