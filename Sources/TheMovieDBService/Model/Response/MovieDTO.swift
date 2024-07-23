@@ -10,7 +10,7 @@ import Foundation
 // MARK:
 // For better naming convetion all API resmponse model will be use *DTO (Data Transfer Object)
 public struct ListDTO<D: Codable>: Codable {
-  let results: [D]
+  public let results: [D]
 
   public init(results: [D]) {
     self.results = results
@@ -18,17 +18,17 @@ public struct ListDTO<D: Codable>: Codable {
 }
 
 public struct MovieDTO: Codable {
-  let id: Int?
-  let title: String?
-  let backdropPath: String?
-  let posterPath: String?
-  let overview: String?
-  let voteAverage: Double?
-  let voteCount: Int?
-  let runtime: Int?
-  let releaseDate: String?
-  let casts: CastsDTO?
-  let videos: ListDTO<VideosDTO>?
+  public let id: Int?
+  public let title: String?
+  public let backdropPath: String?
+  public let posterPath: String?
+  public let overview: String?
+  public let voteAverage: Double?
+  public let voteCount: Int?
+  public let runtime: Int?
+  public let releaseDate: String?
+  public let casts: CastsDTO?
+  public let videos: ListDTO<VideosDTO>?
 
   public init(id: Int?,
               title: String?,
@@ -56,7 +56,7 @@ public struct MovieDTO: Codable {
 }
 
 public struct CastsDTO: Codable {
-  let cast: [CastDTO]
+  public let cast: [CastDTO]
 
   public init(cast: [CastDTO]) {
     self.cast = cast
@@ -64,9 +64,9 @@ public struct CastsDTO: Codable {
 }
 
 public struct CastDTO: Codable {
-  let id: Int?
-  let name: String?
-  let profilePath: String?
+  public let id: Int?
+  public let name: String?
+  public let profilePath: String?
 
   public init(id: Int?, name: String?, profilePath: String?) {
     self.id = id
@@ -76,10 +76,10 @@ public struct CastDTO: Codable {
 }
 
 public struct VideosDTO: Codable {
-  let id: String?
-  let site: String?
-  let key: String?
-  let type: String?
+  public let id: String?
+  public let site: String?
+  public let key: String?
+  public let type: String?
 
   public init(id: String?, site: String?, key: String?, type: String?) {
     self.id = id
