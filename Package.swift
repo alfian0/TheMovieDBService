@@ -31,7 +31,9 @@ let package = Package(
             ],
             resources: [
               .process("Resources/MovieContainer.xcdatamodeld"),
-              .process("Resources/Localizable.strings")
+              .process("Resources/Localizable.strings"),
+              .process("Resources/movie_detail.json"),
+              .process("Resources/now_playing.json")
             ]
         ),
         .testTarget(
