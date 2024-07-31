@@ -17,28 +17,30 @@ public protocol MovieService {
 
 public class MovieServiceImpl: MovieService {
   private let client: HTTPClient
+  private let baseURL: String
 
-  public init(client: HTTPClient) {
+  public init(client: HTTPClient, baseURL: String) {
     self.client = client
+    self.baseURL = baseURL
   }
 
   public func fetchNowMovies(from endpoint: MovieListEndpoint) -> AnyPublisher<Movies.ReturnType, Error> {
     client
-      .publisher(request: Movies(endpoint: endpoint).asURLRequest(baseURL: APIConstans.baseURL)!)
+      .publisher(request: Movies(endpoint: endpoint).asURLRequest(baseURL: baseURL)!)
       .tryMap(DefaultDTOMapper.map)
       .eraseToAnyPublisher()
   }
 
   public func fetchMovieDetail(id: Int) -> AnyPublisher<MovieDetail.ReturnType, Error> {
     client
-      .publisher(request: MovieDetail(id: id).asURLRequest(baseURL: APIConstans.baseURL)!)
+      .publisher(request: MovieDetail(id: id).asURLRequest(baseURL: baseURL)!)
       .tryMap(DefaultDTOMapper.map)
       .eraseToAnyPublisher()
   }
 
   public func searchMovies(with query: String) -> AnyPublisher<Movies.ReturnType, Error> {
     client
-      .publisher(request: SearchMovies(query: query).asURLRequest(baseURL: APIConstans.baseURL)!)
+      .publisher(request: SearchMovies(query: query).asURLRequest(baseURL: baseURL)!)
       .tryMap(DefaultDTOMapper.map)
       .eraseToAnyPublisher()
   }
